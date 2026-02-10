@@ -17,7 +17,7 @@ vector<int> flatten(vector<vector<int>>& grid) {
             int curr=grid[i-1][j-1];
             int above=flattened[idx-(cols+1)];
             int left=flattened[idx-1];
-            int diagonal=flattened[above-1];
+            int diagonal=flattened[(i-1)*(cols+1)+(j-1)];
 
             flattened[idx]=curr+above+left-diagonal;
         }
@@ -26,7 +26,7 @@ vector<int> flatten(vector<vector<int>>& grid) {
 }
 
 int getRangeSum(vector<int>& flattened, int row1, int col1, int row2, int col2) {
-    int cols=flattened[0].size();
+    int cols=flattened.size();
 
     int curr=flattened[(row2+1)*(cols)+(col2+1)];
     int above=flattened[(row1)*(cols)+(col2+1)];
