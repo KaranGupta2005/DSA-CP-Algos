@@ -2,10 +2,11 @@
 using namespace std;
 
 //using the flattened array for storing prefix sums of the matrix reduces the storage look-up overhead
-
+int COLS;
 vector<int> flatten(vector<vector<int>>& grid) {
     int rows=grid.size();
     int cols=(rows)?grid[0].size():0;
+    COLS=cols+1;
 
     if(rows==0 || cols==0) return {};
 
@@ -26,7 +27,7 @@ vector<int> flatten(vector<vector<int>>& grid) {
 }
 
 int getRangeSum(vector<int>& flattened, int row1, int col1, int row2, int col2) {
-    int cols=flattened.size();
+    int cols=COLS;
 
     int curr=flattened[(row2+1)*(cols)+(col2+1)];
     int above=flattened[(row1)*(cols)+(col2+1)];
