@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//Swapping trick eliminates the need for a visited array
+
 //to create unique permutations of an array with or without duplicates
 //we are choosing all the possible choices for each index
 
