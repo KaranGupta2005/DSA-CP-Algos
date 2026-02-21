@@ -50,3 +50,6 @@ vector<vector<int>> diffArray(int n , int m , vector<vector<long long>>& updates
 
     return ans;
 }
+
+// time complexity-> O(n×m+q)
+// space complexity-> O(n×m)
