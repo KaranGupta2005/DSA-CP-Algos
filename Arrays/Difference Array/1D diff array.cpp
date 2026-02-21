@@ -31,3 +31,5 @@ vector<int> diffArray(int n , vector<vector<int>>& updates ){
 }
 
 // overlap , sweep line , capacity check , etc -> hidden diff array
+
+// if the initial array is given -> original array + diff array -> final array
