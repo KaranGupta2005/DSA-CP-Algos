@@ -8,7 +8,7 @@ using namespace std;
 
 // only four updates are required
 
-vector<vector<int>> diffArray(int n , int m , vector<vector<long long>>& updates){
+vector<vector<int>> diffArray(int n , int m , vector<vector<int>>& updates){
     // values can be large -> long long
     vector<vector<long long>> diff(n+2,vector<long long>(m+2,0)); // not n+1 , m+1 -> will handle the overflow
 
