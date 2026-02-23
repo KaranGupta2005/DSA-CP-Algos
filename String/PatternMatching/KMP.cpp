@@ -66,3 +66,5 @@ void patternSearch(string text, string pattern){
         }
     }
 }
+
+// lps is always computed for the entire array , so the last index of the array is always the length of the longest proper prefix which is also suffix for the entire pattern
