@@ -5,7 +5,7 @@ using namespace std;
 // it will take O(n+m) time -> we can improve by reducing it to O(log(min(n,m)))
 // This is called as Binary Search Partition method
 
-void findMedian(vector<int>& arr1, vector<int>& arr2) {
+double findMedian(vector<int>& arr1, vector<int>& arr2) {
     int n=arr1.size();
     int m=arr2.size();
     int len=n+m;
@@ -24,7 +24,7 @@ void findMedian(vector<int>& arr1, vector<int>& arr2) {
         int mid1=low+(high-low)/2;
         int mid2=target-mid1;
 
-        // l1>=r2 and l2>=r1 for the arrays to be correctly partitioned(sorted manner)
+        // l1<=r2 and l2<=r1 for the arrays to be correctly partitioned(sorted manner)
         // l1,l2 and r1,r2 are not compared since they belong to the same array
         int l1=(mid1==0)?INT_MIN:arr1[mid1-1];
         int l2=(mid2==0)?INT_MIN:arr2[mid2-1];
@@ -32,9 +32,9 @@ void findMedian(vector<int>& arr1, vector<int>& arr2) {
         int r2=(mid2==m)?INT_MAX:arr2[mid2];
 
         if(l1>r2){ // move left in arr1
-            low=mid1+1;
-        }else if(l2>r1){ // move right in arr1
             high=mid1-1;
+        }else if(l2>r1){ // move right in arr1
+            low=mid1+1;
         }else{
             // Found the correct partition
             if(len%2==1){
