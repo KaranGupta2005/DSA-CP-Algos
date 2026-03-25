@@ -13,6 +13,9 @@ void mergeSortedArrays(vector<int>& arr1, vector<int>& arr2) {
             left--;
             right++;
         }
+        else{
+            break;
+        }
     }
     
     sort(arr1.begin(), arr1.end());
