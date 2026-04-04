@@ -9,7 +9,7 @@ vector<vector<int>> hashing(vector<int>& nums, int target) {
 
     for(int i=0;i<n;i++){
         for(int j=i+1;j<n;j++){
-            unordered_set<int> hashset;
+            unordered_set<long long> hashset;
             for(int k=j+1;k<n;k++){
                 long long need=(long long)target - nums[i] -nums[j] -nums[k];
                 if(hashset.count(need)){
@@ -30,7 +30,7 @@ vector<vector<int>> hashing(vector<int>& nums, int target) {
 
 // sort the array intially
 // fix i,j,k and then use binary search for the remaining element
-vector<vector<int>> binarSearch(vector<int>& nums, int target) {
+vector<vector<int>> binarySearch(vector<int>& nums, int target) {
     int n=nums.size();
     vector<vector<int>> ans;
 
@@ -98,8 +98,8 @@ vector<vector<int>> twoPointers(vector<int>& nums, int target) {
                 if(sum==target){
                     ans.push_back({nums[i], nums[j], nums[left], nums[right]});
                 
-                    while(left<right && nums[left]==nums[left-1]) left++;
-                    while(left<right && nums[right]==nums[right+1]) right--;
+                    while(left<right && nums[left]==nums[left+1]) left++;
+                    while(left<right && nums[right]==nums[right-1]) right--;
 
                     left++;
                     right--;
