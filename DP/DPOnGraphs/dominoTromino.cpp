@@ -28,6 +28,8 @@ int numTilings(int n) {
     dp[1]=1;
     dp[2]=2;
 
+    gap[2]=1;
+
     for(int col=3;col<=n;col++){
         dp[col]=dp[col-1]+dp[col-2]+2*gap[col-1];
         gap[col]=gap[col-1]+dp[col-2];
