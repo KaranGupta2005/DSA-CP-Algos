@@ -95,3 +95,6 @@ vector<int> morrisPreorder(TreeNode* root){
     }
     return result;
 }
+
+// Time Complexity: O(3N) = O(N)
+// Space Complexity: O(1)
