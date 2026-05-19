@@ -64,3 +64,5 @@ long long tabulation(int n, int k) {
     }
     return dp[n][k];
 }
+
+// Time Complexity: O(n^2 * k)
