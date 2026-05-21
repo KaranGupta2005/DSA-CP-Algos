@@ -104,3 +104,5 @@ So your hull keeps only extreme corner points: minimal convex polygon.
 If you want all boundary points included:
 use < 0 instead.
 */
+
+// Triangle with the maximum area lies on the convex hull
