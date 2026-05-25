@@ -27,7 +27,7 @@ int gcd(int a , int b){
     return b == 0? a:gcd(b,a%b);
 }
 
-int minOperations(int start , int end , int k, int step) {
+int bfsHelper(int start , int end , int k, int step) {
     
     start%=k;
     end%=k;
@@ -65,3 +65,76 @@ int minOperations(int start , int end , int k, int step) {
     
     return -1; // not reachable
 }
+
+int minOperations(vector<int>& nums , int k , int d) {
+    int n=nums.size();
+    int mini=INT_MAX;
+    
+    for(int x=0;x<k;x++){
+        for(int y=0;y<k;y++){
+            if(x==y) continue;
+            
+            int ops=0;
+            bool possible=true;
+
+            for(int i=0;i<n;i++){
+                int val1=nums[i]%k;
+                int val2=(i&1)?y:x;
+
+                int add=bfsHelper(val1, val2, k, d);
+                if(add==-1){
+                    possible=false;
+                    break;
+                } 
+                ops+=add;
+                
+            }
+            if(possible) mini=min(mini, ops);
+        }
+    }
+    
+    return mini==INT_MAX?-1:mini;
+}
+// Time Complexity: O(k^3 * n)
+// Space Complexity: O(k)
+
+/*
+Special Case when d=1: all the modular states are possible
+- Which (x,y) where x,y belongs to [0,k-1] are reachable and x!=y : O(k^2)
+- for min Operations:
+    - forward: (target-curr+k)%k
+    - backward: (curr-target+k)%k
+    - +k: avoiding negative modulo
+*/
+
+int minOpeationsSpecial(vector<int>& nums , int k){
+
+    int n=nums.size();
+    int mini=INT_MAX;
+
+    for(int x=0;x<k;x++){
+        for(int y=0;y<k;y++){
+            if(x==y) continue;
+
+            int ops=0;
+
+            for(int i=0;i<n;i++){
+                int curr=nums[i]%k;
+                int target=(i&1)?y:x;
+                
+                int forw=(target-curr+k)%k;
+                int back=(curr-target+k)%k;
+                
+                ops+=min(forw,back);
+            }
+            
+            mini=min(mini,ops);
+        }
+    }
+    
+    return mini==INT_MAX?-1:mini;
+}
+
+// Time Complexity: O(k^2 * n)
+// Space Complexity: O(1)
+
