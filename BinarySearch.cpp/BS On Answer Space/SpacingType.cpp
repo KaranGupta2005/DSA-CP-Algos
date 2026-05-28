@@ -54,4 +54,6 @@ int spacingType(vector<int>& arr , int k){
     return ans;
 }
 
+// Time Complexity: O(n log n)
+// Space Complexity: O(1)
 
