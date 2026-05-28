@@ -45,3 +45,8 @@ int nthRoot(int n , int x){
     
     return ans;
 }
+
+/*
+Time Complexity -> O(logx*logn)
+Space Complexity-> O(1)
+*/
