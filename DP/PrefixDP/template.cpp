@@ -9,7 +9,7 @@ PREFIX DP
 
 - We are exploring all the cuts
 Whole solution = (previous part) + (last segment)
-dp[i][j] = min over p(0->i-1):
+dp[i][j] = min / max over p(0->i-1):
            dp[p][j-1] + cost(p+1->i)
 
 // p-> last cuts
@@ -17,6 +17,8 @@ dp[i][j] = min over p(0->i-1):
 // dp[p][j-1] -> previous parts
 
 // INTUITION : fix ending + varying starting
+
+// cost DP has to be precomputed 
 */
 
 long long solve(int i, int k, vector<vector<long long>>& dp){
@@ -62,7 +64,7 @@ long long tabulation(int n, int k) {
             }
         }
     }
-    return dp[n][k];
+    return dp[n][k]; 
 }
 
 // Time Complexity: O(n^2 * k)
