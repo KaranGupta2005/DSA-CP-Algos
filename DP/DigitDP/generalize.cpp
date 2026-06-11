@@ -26,7 +26,8 @@ long long dfs(int pos , bool tight){
 
     if(dp[pos][tight]!=-1) return dp[pos][tight];
 
-    int limit = tight ? nums[pos]-'0' : 9;
+    int limit = tight ? num[pos]-'0' : 9;
+    long long ans=0;
 
     for(int dig=0;dig<=limit;dig++){
         
@@ -41,3 +42,10 @@ long long count(int num){
     memset(dp , -1 , sizeof(dp));
     return dfs(0 , true);
 }
+
+/*
+Pattern: Modulo State
+-> Count numbers that are divisible / not divisible by M or whose remainder is R
+-> dp State: dp[pos][tight][rem]
+-> base: return (rem==0) && newRem=(rem*10+dig)%M
+*/
