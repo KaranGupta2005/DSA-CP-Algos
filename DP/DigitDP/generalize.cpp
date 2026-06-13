@@ -48,4 +48,17 @@ Pattern: Modulo State
 -> Count numbers that are divisible / not divisible by M or whose remainder is R
 -> dp State: dp[pos][tight][rem]
 -> base: return (rem==0) && newRem=(rem*10+dig)%M
+-> count in range [L,R] : countRem(R)-countRem(L-1)
+
+Pattern: Digit Sum Modulo M
+-> Count numbers whose digit sum is divisible by M
+-> dp[state] : dp[pos][tight][sumMod]
+-> base: return (sumMod==0) && newSumMod=(sumMod+dig)%M
+-> count in range [L,R] : countSumMod(R)-countSumMod(L-1)
+
+Pattern: Number % M AND Digit Sum % M
+-> Count numbers where (number % M) AND (digitSum % M)
+-> dp[state] : dp[pos][tight][numMod][sumMod]
+-> base: return (numMod==0) && (sumMod==0) ; newNumMod=(numMod*10+dig)%M, newSumMod=(sumMod+dig)%M
+-> count in range [L,R] : countNumSumMod(R)-countNumSumMod(L-1)
 */

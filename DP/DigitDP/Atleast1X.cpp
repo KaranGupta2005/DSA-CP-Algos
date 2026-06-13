@@ -39,3 +39,10 @@ long long atLeastOne(int n){
     memset(dp,-1,sizeof(dp));
     return dfs(0,true,false);
 }
+
+/*
+
+-> Atleast One digit X: newFound= (found || dig==X)
+-> Count Numbers without digit 7: // base - return !found7
+-> even digits : newFound= (found || dig%2==0)
+*/
