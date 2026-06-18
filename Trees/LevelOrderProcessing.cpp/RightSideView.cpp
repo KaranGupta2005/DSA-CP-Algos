@@ -32,3 +32,22 @@ vector<int> rightSideView(TreeNode* root){
     
     return ans;
 }
+
+
+vector<int> res;
+void helper(TreeNode* root , int depth){
+    
+    if(!root) return;
+
+    if(depth == res.size()){
+        res.push_back(root->val);
+    }
+
+    helper(root->right , depth+1);
+    helper(root->left , depth+1);
+}
+
+vector<int> rightSideView(TreeNode* root){
+    helper(root, 0);
+    return res;
+}
