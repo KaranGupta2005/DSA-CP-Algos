@@ -22,3 +22,6 @@ bool validate(TreeNode* root , long long low , long long high){
 bool isValidateBST(TreeNode* root){
     return validate(root , LLONG_MIN , LLONG_MAX);
 }
+
+// Time Complexity : O(N)
+// Space Complexity : O(H) where H is the height of the tree
