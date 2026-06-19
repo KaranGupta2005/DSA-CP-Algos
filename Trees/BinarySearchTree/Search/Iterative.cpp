@@ -12,3 +12,6 @@ TreeNode* searchBST(TreeNode* root , int val){
     
     return NULL;
 }
+
+// Time Complexity : O(logN) : just like Binary Search
+// Worst Case : O(N) : skewed tree
