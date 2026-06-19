@@ -27,3 +27,6 @@ TreeNode* lowestCommonAncestor(TreeNode* root , TreeNode* p , TreeNode* q){
     }
     return NULL;
 }
+
+// Time Complexity : O(logN) : in balanced BST , otherwise O(N)
+// Space Complexity : O(1)
