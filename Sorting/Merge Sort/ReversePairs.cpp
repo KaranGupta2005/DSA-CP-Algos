@@ -18,7 +18,7 @@ long long merge(vector<int>& nums , int l , int mid , int r){
 
     int j=mid+1;
     for(int i=l ; i<=mid ; i++){
-        while(j<=r && nums[i] <= 2LL * nums[j]) j++;
+        while (j <= r && nums[i] > 2LL * nums[j]) j++;
         count += (j - (mid + 1));
     }
 
@@ -49,6 +49,8 @@ long long merge(vector<int>& nums , int l , int mid , int r){
     for(int k=l ; k<=r ; k++) {
         nums[k] = temp[k-l];
     }
+
+    return count;
     
 }
 long long mergeSort(vector<int>& nums , int l , int r){
