@@ -3,10 +3,14 @@ using namespace std;
 
 /*
 Fenwick Tree
-- Subtree Sum Queries , Subtree Update Queries : Then Fenwick Tree is more helpful
+- Subtree Sum Queries , Subtree Update Queries , XOR Queries : Then Fenwick Tree is more helpful
 - Here , we store the node values inside the flatten array ( not the euler order ) : Flatten Valued Array
 - Range Sum + Point Update : best data structure is Fenwick Tree
 - Flow : Original Tree -> Euler Tour -> Flattened Array -> Fenwick Tree -> Answer Queries ( O(logN) )
+
+- Fenwick tree can work with only associative operations , and in Sum operations and Xor Queries becasue prefix queries and xor queries can be inverted
+- a^a = 0 , so we can remove the prefix from the range
+- Similiary , a-a = 0 , so we can remove the prefix from the range
 */
 
 // Euler's Tour
