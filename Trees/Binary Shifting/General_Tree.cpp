@@ -7,14 +7,14 @@ struct TreeNode {
     TreeNode *right;
 
     TreeNode(int x) {
-        val = x;
-        left = right = NULL;
+        this->val = x;
+        this->left = this->right = NULL;
     }
 };
 
 const int LOG = 20;
 unordered_map<TreeNode*,vector<TreeNode*>> up;
-unordered_map<TreeNode*,int> depth;
+unord ered_map<TreeNode*,int> depth;
 
 void dfs(TreeNode* node , TreeNode* parent){
     if(!node) return;

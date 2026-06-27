@@ -85,9 +85,20 @@ class BinaryLifting{
                 u=up[u][j];
                 v=up[v][j];
             }
-        }
+        } 
         
         // we are just below the LCA->return its parent == LCA
         return up[u][0];
     }
 };
+
+/*
+Time Complexity : O(nlogn)
+                : per Query : O(logn)
+                : memory per Query : O(nlogn)
+
+Distance b/w 2 nodes :
+- distance(u , v)
+- find L=lca(u,v)
+- distance = depth(u) + depth(v) - 2*depth(L)
+*/ 
