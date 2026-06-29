@@ -64,6 +64,9 @@ string dfs2(TreeNode* node){
     return key;
 }
 
+// Time Complexity : O(n) for dfs but string operations may take O(n) in worst case
+// Space Complexity : O(n)
+
 vector<TreeNode*> findDuplicateSubtrees(TreeNode* root) {
     dfs(root);
     return result;
