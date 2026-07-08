@@ -65,3 +65,28 @@ vector<int> sumOfDistancesInTree(int n, vector<vector<int>>& edges) {
     
     return ans;
 }
+
+/*
+General Rerooting Technique
+- Every rerooting problem uses 2 dfs
+- DFS1: bottom-up - collects information from children to parent
+- DFS2: top-down - propagates information from parent to children // mostly what propagates changes
+
+- Every node has 3 sources of information : 
+    - Its subtree
+    - Its parent's subtree
+    - Siblings
+
+- Hence every rerooting problem is down[node] and up[node]
+
+- The parent contains the information about all the nodes except the subtree of the current node
+- hence up[child]={ up[node] + (sibling's contibution) + (it's down contribution)}
+
+- Now suppose a node has 10^5 child , processing each will need to -> O(n^2) complexity
+- Hence we need to optimize this using prefix and suffix arrays
+- Then siblings' constribution will be based on left ( prefix[i-1] ) && right ( suffix[i+1] )
+
+- Not always we need to compute prefix and suffix arrays :
+    - when you need the contribution of all siblings : yes : Tree Heights after Subtree Removal
+    - otherwise : best and second best would suffice : Maximum Distance of nodes or Maximum Diameter / Path of nodes
+*/
