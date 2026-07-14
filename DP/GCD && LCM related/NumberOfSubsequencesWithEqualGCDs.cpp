@@ -1,6 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/*
+Count of subsequences with different GCDs
+
+- for each element in the given array:
+    - ignore it
+    - take it and update the GCDs
+*/
 int gcd(int a , int b){
     if(b==0) return a;
     return gcd(b, a%b);
