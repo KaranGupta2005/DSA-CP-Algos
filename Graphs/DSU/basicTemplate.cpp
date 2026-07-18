@@ -25,10 +25,12 @@ Where alpha(N) is the inverse Ackermann function, which grows extremely slowly a
 
 class DSU{
     public:
-
+    
+    int components;
     vector<int> parent , size;
 
     DSU(int n){
+        components=n; // for components size
         parent.resize(n);
         size.assign(n , 1);
 
@@ -55,7 +57,12 @@ class DSU{
 
         parent[v]=u; // small to large merging
         size[u]+=size[v];
+        components--; // reduce component count
         return true;
+    }
+
+    int componentSize(int x){
+        return size[find(x)];
     }
 }
 
