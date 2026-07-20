@@ -87,7 +87,7 @@ int smallestSubmask(int mask) {
 
 //largest submask of a mask
 int largestSubmask(int mask) {
-    return (mask & (-mask));
+    return (mask & (mask - 1));
 }
 
 
