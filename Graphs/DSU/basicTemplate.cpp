@@ -64,5 +64,9 @@ class DSU{
     int componentSize(int x){
         return size[find(x)];
     }
+    
+    int getComponents(){
+        return components;
+    }
 }
 

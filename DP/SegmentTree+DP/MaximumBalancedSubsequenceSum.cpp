@@ -30,3 +30,14 @@ long long maxBalancedSubsequenceSum(vector<int>& nums) {
     
     return ans;
 }
+
+/*
+Time Complexity: O(n^2)
+Space Complexity: O(n)
+
+- Observe if we rearrange the condition : nums[i]-i >= nums[j]-j
+- key : nums[i]-i
+- dp[i] : maximum balanced subsequence sum ending at index i : nums[i]+max(dp[j]) : subject to key[j] <= key[i]
+- keys needs to be compressed : sort -> unique -> coordinate compression
+- we can use segment tree , the same way to maximum dp in range [0 , key[i]]
+*/

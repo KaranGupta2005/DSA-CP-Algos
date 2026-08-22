@@ -2,7 +2,7 @@
 using namespace std;
 
 /*
-If we are going to find the maximum points that line on a line , 
+If we are going to find the maximum points that lie on a line , 
 -Cross Product
     - Will lead to the brute force O(n^3) time complexity
 

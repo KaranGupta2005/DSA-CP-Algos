@@ -17,9 +17,9 @@ using namespace std;
 - DP States
     - these depend upon the last and first elements of the subarray
     - dp[0][0] = max sum subsequence not including first and the last element
-    - dp[0][1] = max sum subsequence including first element
-    - dp[1][0] = max sum subsequence not including last element
-    - dp[1][1] = max sum subsequence including last element
+    - dp[0][1] = max sum subsequence not including first element , inc last element
+    - dp[1][0] = max sum subsequence not including last element , inc first element
+    - dp[1][1] = max sum subsequence including last element , first element
 
     - only boundary matters (as only they can touch) (leftLast ... rightFirst): these are adjacent
 
