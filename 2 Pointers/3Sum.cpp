@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// in 3sum we find all th triplets {a,b,c}==target
+// in 3sum we find all the triplets {a,b,c} such that a+b+c==target
 // the most naive approach is to use 3 nested loops -> o(n^3) time complexity
 // and using set to avoid duplicates -> insertion overhead of o(log n)
 
