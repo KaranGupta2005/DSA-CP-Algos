@@ -28,3 +28,56 @@ int removeDuplicates(vector<int>& nums){
     }
     return slow;
 }
+
+/*
+Remove ELement
+- the first k elements should not be equal to val
+- return k
+*/
+int removeElement(vector<int>& nums, int val) {
+    int slow=0;
+    int n=nums.size();
+
+    for(int fast=0 ; fast<n ; fast++){
+        if(nums[fast]!=val){
+            nums[slow]=nums[fast];
+            slow++;
+        }
+    }
+
+    return slow;
+}
+
+/*
+Move Zeros
+- Move all the zeros to the end of the array
+- [0 .... slow-1] : non zero elements
+- [slow .... n-1] : zeros
+*/
+void moveZeros(vector<int>& nums) {
+    int slow=0;
+    int n=nums.size();
+
+    for(int fast=0 ; fast<n ; fast++){
+        if(nums[fast]!=0){
+            swap(nums[slow], nums[fast]);
+            slow++;
+        }
+    }
+}
+
+/*
+Partition Array
+- Used for even/odd ; positive/negative ; removing invalid elements ; partition by parity
+*/
+void partitionArray(vector<int>& nums) {
+    int slow=0;
+    int n=nums.size();
+
+    for(int fast=0 ; fast<n ; fast++){
+        if(conditionOn(nums[fast])){
+            swap(nums[slow], nums[fast]);
+            slow++;
+        }
+    }
+}
